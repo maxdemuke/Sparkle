@@ -331,31 +331,6 @@ async def on_command_error(ctx, error):
                 embed.set_footer(icon_url=f"{ctx.author.avatar_url}",
                                  text=f"{bot.user.name} Errorhandling | {ctx.message.author.name}#{ctx.message.author.discriminator}")
                 return
-
-
-@bot.command()
-@commands.is_owner()
-async def shutdown(ctx):
-    before = time.monotonic()
-    checkembed = discord.Embed(title=f"<a:SasakiLoading:711652537081659405> | Shutting down...",
-                               description=f"",
-                               color=0x2f3542)
-    message = await ctx.send(embed=checkembed)
-    await asyncio.sleep(1.5)
-    ping = (time.monotonic() - before) * 1000
-    embed = discord.Embed(title="I'm offline now!", description=f"{bot.user.name}; {bot.user.id}\n"
-                                                               f"The shutdown took exactly: ``{int(ping)}ms``\n "
-                                                                f"Shutdown at: ``{datetime.datetime.now().strftime('%d %b %Y, %H:%M')}``\n"
-                                                                f"Command executed on: ``{ctx.guild.name}``")
-    print(f"\n[SHUTDOWN]\n"
-          f"{bot.user.name}; {bot.user.id}\n"
-          f"The shutdown took exactly: {int(ping)}ms\n"
-          f"Shutdown at: {datetime.datetime.now().strftime('%d %b %Y, %H:%M')}\n"
-          f"Command executed on: {ctx.guild.name}")
-    embed.set_thumbnail(
-        url="https://cdn.discordapp.com/attachments/653679313853480960/719633387283021824/a602d243868764d3805f38324f59645b.png")
-    await message.edit(embed=embed)
-    await ctx.bot.logout()
     
 ############################################
 
