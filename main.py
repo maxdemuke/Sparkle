@@ -356,11 +356,7 @@ async def shutdown(ctx):
         url="https://cdn.discordapp.com/attachments/653679313853480960/719633387283021824/a602d243868764d3805f38324f59645b.png")
     await message.edit(embed=embed)
     await ctx.bot.logout()
-
-###########################################################
-
-for filename in os.listdir('OtherCommands'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'OtherCommands.{filename[:-3]}')
+    
+############################################
 
 bot.run('TOKEN')
