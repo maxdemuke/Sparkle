@@ -12,6 +12,7 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix='!')
 
 ################################################################
+################################################################
 async def errorembed(ctx, error):
     embederror = discord.Embed(
         description=f"> Following information could help you with fixing the error: \n``{error}``\n \n"
@@ -36,9 +37,9 @@ async def on_ready():
     print(f"- Server using {bot.user.name}:",
           len(bot.guilds))
     # Bot Presence
-    await bot.change_presence(status=discord.Status.idle, activity=discord.Game("in Development"))
+    await bot.change_presence(status=discord.Status.idle, activity=discord.Game("sasaki.me"))
     await asyncio.sleep(120)
-    await bot.change_presence(status=discord.Status.idle, activity=discord.Game("The Sasaki World"))
+    await bot.change_presence(status=discord.Status.idle, activity=discord.Game("sasaki.me"))
     await asyncio.sleep(120)
     await bot.change_presence(status=discord.Status.idle, activity=discord.Game("sasaki.me"))
     await asyncio.sleep(120)
